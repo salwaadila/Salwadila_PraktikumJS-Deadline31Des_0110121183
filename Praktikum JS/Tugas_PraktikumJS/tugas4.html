@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image | Salwadila AZ</title>
+    <script>
+        function klik(){
+            let list_gambar = document.getElementById("gambar");
+            let idx = list_gambar.selectedIndex;
+            let gambar = document.getElementById("gambar0");
+            gambar.src = "img/"+list_gambar[idx].value+".jpg";
+        }
+    </script>
+    <style>
+        img{
+            border: 1px solid black;
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm1">
+        Pilih Gambar : <select id="gambar" onchange="klik()">
+            <option value="gambar1">Gambar 1</option>
+            <option value="gambar2">Gambar 2</option>
+            <option value="gambar3">Gambar 3</option>
+            <option value="gambar4">Gambar 4</option>
+            <option value="gambar5">Gambar 5</option>
+            <option value="gambar6">Gambar 6</option>
+        </select>
+    </form>
+    <br>
+    <img src="img/gambar1.jpg" alt="Gambar Pertama" id="gambar0">
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Salwadila AZ</title>
+    <style>
+        #ini{
+            position: absolute;
+            bottom: 0;
+            width: 830px;
+        }
+        body{
+            width: 900px;
+            min-height: 500px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            position: relative;
+            margin: auto;
+        }
+        button{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="ini" onchange="kirim()">
+    <button onclick="kirim()">Kirim</button>
+    <div id="room"></div>
+
+    <script>
+        let chat = document.getElementById("ini")
+        let hasil = document.getElementById("room")
+        let penampung = ""
+
+        function kirim() {
+            penampung += chat.value + "<br>"
+            hasil.innerHTML = penampung
+            chat.value = ""
+        }
+    </script>
+</body>
+</html>

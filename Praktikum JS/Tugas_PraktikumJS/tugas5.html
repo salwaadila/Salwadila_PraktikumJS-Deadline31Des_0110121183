@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation | Salwadila Az Zahra</title>
+</head>
+<body>
+    <form action="" id="form-input">
+        <table>
+            <tr>
+                <td>
+                    <label for="nama">Masukkan Nama</label>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="nama" id="nama" required maxlength="30" placeholder="Masukkan Nama">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Masukkan Alamat Email</label>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="email" name="mail" id="email" required placeholder="Alamat Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="jam">Jam Keberangkatan</label>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="time" name="jam" id="jam" required placeholder="Jam Keberangkatan">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tujuan">Tujuan Keberangkatan</label>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="text" name="tujuan" id="tujuan" required placeholder="Tujuan Keberangkatan">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="nama">Jumlah Tiket</label>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="number" id="jumlah_tiket" min="1" max="10" placeholder="Jumlah Tket">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="data"></div>
+    
+    <script>
+        function showData(e) {
+            const wrapper = document.getElementById('data');
+            const nama = document.getElementById('nama')
+            const email = document.getElementById('email')
+            const jam = document.getElementById('jam')
+            const tujuan = document.getElementById('tujuan')
+            const tiket = document.getElementById('jumlah_tiket')
+                // console.log(jam.value)
+
+            wrapper.innerHTML = `<table cellspacing="18">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Jam Keberangkatan</th>
+                    <th>Tujuan Keberangkatan</th>
+                    <th>Jumlah Tiket</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${nama.value}</td>
+                    <td>${email.value}</td>
+                    <td>${jam.value}</td>
+                    <td>${tujuan.value}</td>
+                    <td>${tiket.value}</td>
+                </tr>
+            </tbody>
+        </table>`
+
+            e.preventDefault();
+        }
+
+        const form = document.getElementById('form-input');
+        form.addEventListener('submit', showData);
+    </script>
+</body>
+</html>
